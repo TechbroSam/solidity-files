@@ -1,0 +1,63 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "stor0",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mybotfinal1.sol": "MyContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/mybotfinal1.sol": {
+			"keccak256": "0x3a52e9f486065823df6ed3a39ffce3d7bb89ebb9c7d7d9ba9659937de42e8ead",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cdf189e51f4b7d6c09041f0a73578343f68a0411f355ff051dd183aaaaca394f",
+				"dweb:/ipfs/Qmbo7TgwY9Q5xbHBosBKb9E3YqW677MiCG4ZL5ztgtpQi1"
+			]
+		}
+	},
+	"version": 1
+}

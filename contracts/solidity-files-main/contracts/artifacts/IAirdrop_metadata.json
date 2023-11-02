@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "airdrop",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/saitama2.0.sol": "IAirdrop"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/saitama2.0.sol": {
+			"keccak256": "0x54ea498f0b713cff8e2c12328d0930739b83468b806796ce5d89799b02393bfe",
+			"license": "Unlicensed",
+			"urls": [
+				"bzz-raw://ee14dc74467f0e490b35db4d29aecec776cc389623f461b05a816cc3da929be5",
+				"dweb:/ipfs/QmV3FatsyusRw1PDNbNkUn8tJzXK8t5NzFCShPC4QXSJj6"
+			]
+		}
+	},
+	"version": 1
+}

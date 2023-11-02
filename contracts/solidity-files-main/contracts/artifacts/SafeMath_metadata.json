@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/baseswaplocker.sol": "SafeMath"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/baseswaplocker.sol": {
+			"keccak256": "0xff8b449a5ef82450d083b85748a0986917cf4fa835bef4e8c28a328deb6b43d4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://712d4992733b0aff16a8c7c3ad52b75778c79b1163bcef32d15ef8eb6fa0f1b6",
+				"dweb:/ipfs/QmZcv1kTKaEDCmFQBV11Et4k7E9PUxDZpTYS3wDa4RtD79"
+			]
+		}
+	},
+	"version": 1
+}

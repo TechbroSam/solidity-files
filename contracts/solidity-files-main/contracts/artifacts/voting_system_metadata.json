@@ -1,0 +1,158 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_candidate",
+						"type": "string"
+					}
+				],
+				"name": "Vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Winner",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_candidateName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_candidateAge",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_candidateId",
+						"type": "string"
+					}
+				],
+				"name": "candidateRegistration",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "seeCandidates",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "seeResults",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_candidate",
+						"type": "string"
+					}
+				],
+				"name": "seeVotes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"Vote(string)": {
+					"details": "This function is so that people can vote for a candidate For this function to make sense we must: 1. Calculate the hash of the address of the person who executes this function. 2. We check if the voter has already voted. 3. We store the hash of the voter inside the voters array in case they didn't vote. ´´string [] voters´´ 4. We verify that the candidate is on the list of candidates 5. 4. Finally we add a vote to the selected candidate."
+				},
+				"candidateRegistration(string,uint256,string)": {
+					"details": "This function is to register as a candidate for the elections It is public for anyone to register For this function to make sense we must:: 1. Create the hash of the candidate data. 2. We store the hash of the candidate's data linked to their name. 3. We store the name of the candidate in the dynamic array candidates."
+				},
+				"seeCandidates()": {
+					"details": "This function is to see all the candidates registered For this function to make sense we must: 1. We must to return the dynamic array where the candidates are storaged.  string [] candidates;"
+				},
+				"seeVotes(string)": {
+					"details": "This function return the name of a candidate, it returns the number of votes he has. For this function to make sense we must: 1. With the mapping candidate votes we can access the votes that the candidate has."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/votingsystem.sol": "voting_system"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/votingsystem.sol": {
+			"keccak256": "0x321289299c85d822591dfd8b147f52a4b6f10461f8ad0238519f0038d24f4368",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3386215478a8cb208e96ad6660ca0a11ed342b67b9186fa369fa42719ed66211",
+				"dweb:/ipfs/QmSLrGiNbVvwDPc5XLrf67YZwkdfvzERfemya9XP54ftDG"
+			]
+		}
+	},
+	"version": 1
+}

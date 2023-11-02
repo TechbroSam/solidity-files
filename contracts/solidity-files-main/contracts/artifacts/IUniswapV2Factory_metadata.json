@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "createPair",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pair",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/solhoneypot.sol": "IUniswapV2Factory"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/solhoneypot.sol": {
+			"keccak256": "0x8c5b8e8eea70f0b1056f6ecb95f4af6ba8aeb9c97f71adabb1f746bbaec89a03",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://35779bb49592df8fd09d70c2e895f6726aa81b757a448b31d954627fa65df498",
+				"dweb:/ipfs/QmSrozf1ZqKzdMeivzK3iLW9vk4aEiqGjkaZaZNC56buuS"
+			]
+		}
+	},
+	"version": 1
+}

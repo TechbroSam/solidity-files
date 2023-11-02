@@ -1,0 +1,40 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/kibaswap.sol": "UniswapV2Library"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/kibaswap.sol": {
+			"keccak256": "0x38093db60cf5726b3175748c0c7447b62512280fa2d75c737e895b2a1f3f89a0",
+			"urls": [
+				"bzz-raw://f795db631908f9a7480dfd58f0c0eededbb036f8204922c44696e8ea64afb319",
+				"dweb:/ipfs/QmSCVjaBuekmd3nRrkdbbNJcoQ8kKWojupPn6U11KdDCdU"
+			]
+		}
+	},
+	"version": 1
+}

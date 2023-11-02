@@ -1,0 +1,798 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "AllowanceOverflow",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "AllowanceUnderflow",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InsufficientAllowance",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InsufficientBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidPermit",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NewOwnerIsZeroAddress",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NoHandoverRequest",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "PermitExpired",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TotalSupplyOverflow",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "Unauthorized",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "pendingOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipHandoverCanceled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "pendingOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipHandoverRequested",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DOMAIN_SEPARATOR",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "result",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "activate",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "result",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "result",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cancelOwnershipHandover",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "pendingOwner",
+						"type": "address"
+					}
+				],
+				"name": "completeOwnershipHandover",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "difference",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "directSpendAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "directTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "difference",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minable",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "miner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "mintSupplyFromMinedLP",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "nonces",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "result",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "result",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "pendingOwner",
+						"type": "address"
+					}
+				],
+				"name": "ownershipHandoverExpiresAt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "result",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "permit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "requestOwnershipHandover",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "result",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"AllowanceOverflow()": [
+					{
+						"details": "The allowance has overflowed."
+					}
+				],
+				"AllowanceUnderflow()": [
+					{
+						"details": "The allowance has underflowed."
+					}
+				],
+				"InsufficientAllowance()": [
+					{
+						"details": "Insufficient allowance."
+					}
+				],
+				"InsufficientBalance()": [
+					{
+						"details": "Insufficient balance."
+					}
+				],
+				"InvalidPermit()": [
+					{
+						"details": "The permit is invalid."
+					}
+				],
+				"NewOwnerIsZeroAddress()": [
+					{
+						"details": "The `newOwner` cannot be the zero address."
+					}
+				],
+				"NoHandoverRequest()": [
+					{
+						"details": "The `pendingOwner` does not have a valid handover request."
+					}
+				],
+				"PermitExpired()": [
+					{
+						"details": "The permit has expired."
+					}
+				],
+				"TotalSupplyOverflow()": [
+					{
+						"details": "The total supply has overflowed."
+					}
+				],
+				"Unauthorized()": [
+					{
+						"details": "The caller is not authorized to call the function."
+					}
+				]
+			},
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when `amount` tokens is approved by `owner` to be used by `spender`."
+				},
+				"OwnershipHandoverCanceled(address)": {
+					"details": "The ownership handover to `pendingOwner` has been canceled."
+				},
+				"OwnershipHandoverRequested(address)": {
+					"details": "An ownership handover to `pendingOwner` has been requested."
+				},
+				"OwnershipTransferred(address,address)": {
+					"details": "The ownership is transferred from `oldOwner` to `newOwner`. This event is intentionally kept the same as OpenZeppelin's Ownable to be compatible with indexers and [EIP-173](https://eips.ethereum.org/EIPS/eip-173), despite it not being as lightweight as a single argument event."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `amount` tokens is transferred from `from` to `to`."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"DOMAIN_SEPARATOR()": {
+					"details": "Returns the EIP-2612 domains separator."
+				},
+				"allowance(address,address)": {
+					"details": "Returns the amount of tokens that `spender` can spend on behalf of `owner`."
+				},
+				"approve(address,uint256)": {
+					"details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Emits a {Approval} event."
+				},
+				"balanceOf(address)": {
+					"details": "Returns the amount of tokens owned by `owner`."
+				},
+				"cancelOwnershipHandover()": {
+					"details": "Cancels the two-step ownership handover to the caller, if any."
+				},
+				"completeOwnershipHandover(address)": {
+					"details": "Allows the owner to complete the two-step ownership handover to `pendingOwner`. Reverts if there is no existing ownership handover requested by `pendingOwner`."
+				},
+				"decimals()": {
+					"details": "Returns the decimals places of the token."
+				},
+				"decreaseAllowance(address,uint256)": {
+					"details": "Atomically decreases the allowance granted to `spender` by the caller. Emits a {Approval} event."
+				},
+				"increaseAllowance(address,uint256)": {
+					"details": "Atomically increases the allowance granted to `spender` by the caller. Emits a {Approval} event."
+				},
+				"name()": {
+					"details": "Returns the name of the token."
+				},
+				"nonces(address)": {
+					"details": "Returns the current nonce for `owner`. This value is used to compute the signature for EIP-2612 permit."
+				},
+				"owner()": {
+					"details": "Returns the owner of the contract."
+				},
+				"ownershipHandoverExpiresAt(address)": {
+					"details": "Returns the expiry timestamp for the two-step ownership handover to `pendingOwner`."
+				},
+				"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "Sets `value` as the allowance of `spender` over the tokens of `owner`, authorized by a signed approval by `owner`. Emits a {Approval} event."
+				},
+				"renounceOwnership()": {
+					"details": "Allows the owner to renounce their ownership."
+				},
+				"requestOwnershipHandover()": {
+					"details": "Request a two-step ownership handover to the caller. The request will automatically expire in 48 hours (172800 seconds) by default."
+				},
+				"symbol()": {
+					"details": "Returns the symbol of the token."
+				},
+				"totalSupply()": {
+					"details": "Returns the amount of tokens in existence."
+				},
+				"transfer(address,uint256)": {
+					"details": "Transfer `amount` tokens from the caller to `to`. Requirements: - `from` must at least have `amount`. Emits a {Transfer} event."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "Transfers `amount` tokens from `from` to `to`. Note: Does not update the allowance if it is the maximum uint256 value. Requirements: - `from` must at least have `amount`. - The caller must have at least `amount` of allowance to transfer the tokens of `from`. Emits a {Transfer} event."
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the owner to transfer the ownership to `newOwner`."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Pond0x.sol": "Pond0x"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Pond0x.sol": {
+			"keccak256": "0x07286e64bee3a6f9b2cd12b7a645793737a35c9f7593c756f6f3b2baa3e4dbd3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://49bbea499b1d3c22fdb64f30b6791f4205758548620483ecf4468dbe76bcee2e",
+				"dweb:/ipfs/QmYZ1UWcceU9ofHLnpNdZU9yWraoHBC4BnjcDKiikbHga4"
+			]
+		},
+		"solady/src/auth/Ownable.sol": {
+			"keccak256": "0xa0d943b6588c18b375535353b0b93310346a22997f91f9057348d6cdb33d9359",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d76543c2e852af68f272a7be8966ecec47f552c0f75b21b79a5f7a60c078a2ab",
+				"dweb:/ipfs/Qmdz2U2gUedvWkBKeEfuccw4RkMBZ1D64CbqFi8rDNsL5M"
+			]
+		},
+		"solady/src/tokens/ERC20.sol": {
+			"keccak256": "0x264e4675697d05dfb9bbe9cc91c6bda7962d934f1e940336fd75d509b7f396c4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5856338689f03f36c057203c5085243e104b8487274432062ebf076b512edeea",
+				"dweb:/ipfs/QmXrqgaWQikKkHfoBkYPxeMTJWUY5uf7kSmipNbpU35XwK"
+			]
+		}
+	},
+	"version": 1
+}

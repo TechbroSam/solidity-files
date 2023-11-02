@@ -1,0 +1,44 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/finalmevbot.sol": "Contract"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/finalmevbot.sol": {
+			"keccak256": "0x4cd74e3a67ad4c730ae7b22360f265d38f52d2ad1c3c7a1d7755006c4de8aaa9",
+			"urls": [
+				"bzz-raw://7d090668cc64bd230df9dfd0cee6f7af941adbba7e3ed7b9c5c955311e20d359",
+				"dweb:/ipfs/QmQQnbSTosGj3mSh74i5zAktmKtKTXuAXExdgn9zK81BGF"
+			]
+		}
+	},
+	"version": 1
+}
