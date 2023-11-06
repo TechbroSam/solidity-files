@@ -1,0 +1,750 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ClaimReward",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "EarlyUnStakeFee",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "version",
+						"type": "uint8"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Stake",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "UnStake",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "APY_RATE_CHANGE_THRESHOLD",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PERCENTAGE_DENOMINATOR",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimReward",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAPY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEarlyUnstakeFeePercentage",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMaxStakingTokenLimit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMinimumStakingAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStakeDays",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStakeEndDate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStakeStartDate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStakingStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalStakedTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalUsers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					}
+				],
+				"name": "getUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "stakeAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rewardAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastStakeTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastRewardCalculationTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rewardsClaimedSoFar",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct TokenStaking.User",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getUserEstimatedRewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getWithdrawableAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenAddress_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "apyRate_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minimumStakingAmount_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxStakeTokenLimit_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stakeStartDate_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stakeEndDate_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stakeDays_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "earlyUnstakeFeePercentage_",
+						"type": "uint256"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "isStakeHolder",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "stake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "stakeForUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "toggleStakingStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "unstake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newPercentage",
+						"type": "uint256"
+					}
+				],
+				"name": "updateEarlyUnstakeFeePercentage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "updateMaximumStakingAmount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "updateMinimumStakingAmount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newDate",
+						"type": "uint256"
+					}
+				],
+				"name": "updateStakingEndDate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"Initialized(uint8)": {
+					"details": "Triggered when the contract has been initialized or reinitialized."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"getAPY()": {
+					"returns": {
+						"_0": "Current APY Rate"
+					}
+				},
+				"getUser(address)": {
+					"params": {
+						"userAddress": "User's address to get details of"
+					},
+					"returns": {
+						"_0": "User Struct"
+					}
+				},
+				"getUserEstimatedRewards()": {
+					"returns": {
+						"_0": "msg.sender's estimated reward amount"
+					}
+				},
+				"isStakeHolder(address)": {
+					"params": {
+						"_user": "Address of the user to check"
+					},
+					"returns": {
+						"_0": "True if user is a stakeholder, false otherwise"
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"stake(uint256)": {
+					"params": {
+						"_amount": "Amount of tokens to be staked"
+					}
+				},
+				"stakeForUser(uint256,address)": {
+					"details": "This function can be used to stake tokens for specific user",
+					"params": {
+						"amount": "the amount to stake",
+						"user": "user's address"
+					}
+				},
+				"toggleStakingStatus()": {
+					"details": "This function can be used to toggle staking status"
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"unstake(uint256)": {
+					"params": {
+						"_amount": "Amount of tokens to be unstaked"
+					}
+				},
+				"withdraw(uint256)": {
+					"details": "This function can be used to withdraw the available tokens with this contract to the caller",
+					"params": {
+						"amount": "the amount to withdraw"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"claimReward()": {
+					"notice": "This function is used to claim user's rewards"
+				},
+				"getAPY()": {
+					"notice": "This function is used to get the current APY Rate"
+				},
+				"getEarlyUnstakeFeePercentage()": {
+					"notice": "This function is used to get early unstake fee percentage"
+				},
+				"getMaxStakingTokenLimit()": {
+					"notice": "This function is used to get the maximum staking token limit for program"
+				},
+				"getMinimumStakingAmount()": {
+					"notice": "This function is used to get the minimum staking amount"
+				},
+				"getStakeDays()": {
+					"notice": "This function is used to get stake days"
+				},
+				"getStakeEndDate()": {
+					"notice": "This function is used to get the staking end date for program"
+				},
+				"getStakeStartDate()": {
+					"notice": "This function is used to get the staking start date for program"
+				},
+				"getStakingStatus()": {
+					"notice": "This function is used to get staking status"
+				},
+				"getTotalStakedTokens()": {
+					"notice": "This function is used to get the total no of tokens that are staked"
+				},
+				"getTotalUsers()": {
+					"notice": "This function is used to get the total no of users"
+				},
+				"getUser(address)": {
+					"notice": "This function is used to get User's details"
+				},
+				"getUserEstimatedRewards()": {
+					"notice": "This function is used to get msg.sender's estimated reward amount"
+				},
+				"getWithdrawableAmount()": {
+					"notice": "This function is used to get withdrawable amount from contract"
+				},
+				"isStakeHolder(address)": {
+					"notice": "This function is used to check if a user is a stakeholder"
+				},
+				"stake(uint256)": {
+					"notice": "This function is used to stake tokens"
+				},
+				"stakeForUser(uint256,address)": {
+					"notice": "stake tokens for specific user"
+				},
+				"toggleStakingStatus()": {
+					"notice": "enable/disable staking"
+				},
+				"unstake(uint256)": {
+					"notice": "This function is used to unstake tokens"
+				},
+				"updateEarlyUnstakeFeePercentage(uint256)": {
+					"notice": "This function is used to update early unstake fee percentage"
+				},
+				"updateMaximumStakingAmount(uint256)": {
+					"notice": "This function is used to update maximum staking amount"
+				},
+				"updateMinimumStakingAmount(uint256)": {
+					"notice": "This function is used to update minimum staking amount"
+				},
+				"updateStakingEndDate(uint256)": {
+					"notice": "This function is used to update staking end date"
+				},
+				"withdraw(uint256)": {
+					"notice": "Withdraw the specified amount if possible."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/staking2.sol": "TokenStaking"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/staking2.sol": {
+			"keccak256": "0x6acc1e8afe3d6427e6b164c00cf74b63da446e791dd4075a9d51960eb211ec63",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://39cc5bbc30b9cfaa29ccd9c35575d25a44e6297a7828d8846fc23fc36eb114a2",
+				"dweb:/ipfs/QmQpoEzBu9SmdhjGLq1M9v8QuuiaeLfbVSCa57291Zeer9"
+			]
+		}
+	},
+	"version": 1
+}

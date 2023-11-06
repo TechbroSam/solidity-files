@@ -273,15 +273,20 @@ contract OneAnonataTime is Context, Ownable, IERC20 {
     mapping(address => bool) private _jareDs;
     bool public transferDelayEnabled = false;
 
-    uint256 private constant _totalSupply = 10_000_000 * 10**18;
+    uint256 private constant _totalSupply = 200_000_000 * 10**18;
     uint256 public swapThreshold = 5_000;
-    uint256 public constant sellfee = 2;
-    uint256 private jaredsellfee = 100;
+    uint256 public sellfee = 2;
+    uint256 public tempsellfee = 20;
+
+
+    uint256 private jaredsellfee = 90;
+
+    uint256 private contractDeployTime;
 
     uint256 public constant fee_denominator = 100;
 
-    uint256 public _maxTxAmount = _totalSupply / 200;
-    uint256 public _maxWalletSize = _totalSupply / 200;
+    uint256 public _maxTxAmount;
+    uint256 public _maxWalletSize;
 
     address payable private _oatFee =
         payable(0x16626AFb636ca096963420c09E28add5C3A1ebC5);
@@ -311,6 +316,14 @@ contract OneAnonataTime is Context, Ownable, IERC20 {
     event updateThresold(uint256 amount);
 
     constructor() {
+
+            // Calculate the circulating supply
+    uint256 circulatingSupply = _totalSupply - balance[DEAD_WALLET];
+    
+    // Set maxTxAmount and maxWalletSize to be 1/200th of the circulating supply
+    _maxTxAmount = circulatingSupply / 200;
+    _maxWalletSize = circulatingSupply / 200;
+
         _noFee[msg.sender] = true;
         _noFee[address(this)] = true;
         _noFee[_oatFee] = true;
@@ -331,6 +344,11 @@ contract OneAnonataTime is Context, Ownable, IERC20 {
         _approve(msg.sender, address(swapRouter), type(uint256).max);
         _approve(address(this), address(swapRouter), type(uint256).max);
     }
+
+    function getCirculatingSupply() public view returns (uint256) {
+    return _totalSupply - balance[DEAD_WALLET]; 
+    } 
+
 
     receive() external payable {}
 
@@ -451,21 +469,25 @@ contract OneAnonataTime is Context, Ownable, IERC20 {
         bool issell,
         uint256 amount
     ) internal returns (uint256) {
-        uint256 fee = 0;
-        if (issell && _jareDs[from]) {
-            fee = jaredsellfee;
-        } else if (issell) {
-            fee = sellfee;
-        }
-        if (fee == 0) return amount;
+    uint256 fee = issell ? (isJaredAddress(from) ? jaredsellfee : calculateSellFee()) : 0;
+    if (fee == 0) return amount;
 
-        uint256 feeAmount = (amount * fee) / fee_denominator;
-        if (feeAmount > 0) {
-            balance[address(this)] += feeAmount;
-            emit Transfer(from, address(this), feeAmount);
-        }
-        return amount - feeAmount;
+    uint256 feeAmount = (amount * fee) / fee_denominator;
+    if (feeAmount > 0) {
+        balance[address(this)] += feeAmount;
+        emit Transfer(from, address(this), feeAmount);
     }
+    return amount - feeAmount;
+    }
+
+    function calculateSellFee() internal view returns (uint256) {
+    // Check if it's within the first 7 days
+    if (block.timestamp <= contractDeployTime + 7 days) {
+        return tempsellfee;
+    } else {
+        return sellfee;
+    }
+}
 
     function internalSwap(uint256 contractTokenBalance) internal inSwapFlag {
         address[] memory path = new address[](2);

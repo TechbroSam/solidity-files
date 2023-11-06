@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.19+commit.7dd6d404"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -18,9 +18,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/solidity-files-main/contracts/oatfinally.sol": "Context"
+			"contracts/TransferHelper.sol": "TransferHelper"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -32,12 +32,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/solidity-files-main/contracts/oatfinally.sol": {
-			"keccak256": "0x84f30308900398fd58891603fc03a41a48d19a0fe10bead39b0162ee9fcb2d72",
-			"license": "MIT",
+		"contracts/TransferHelper.sol": {
+			"keccak256": "0x81c32236cbd9cc60d216bd15193ce33f86732517f01c0e6c094e57963ccf26a7",
 			"urls": [
-				"bzz-raw://ed38a19d62a653b7eb6053e42ba83cc915cae780d0e0fcc46ad3b5d67ef9ae68",
-				"dweb:/ipfs/QmaHKzYQVoT8xHtqXCTTLBoUzDEFVGvd1XH8KenZWFdCS3"
+				"bzz-raw://71bfd7ab11eab9b071cfbdfce5aff5e7a2a8115221338f0afaf9b62bf01b5961",
+				"dweb:/ipfs/Qmf5SLk3Fr9Tdg1EAbQHzWux21He6Ef1XNhus9P7L1iXco"
 			]
 		}
 	},

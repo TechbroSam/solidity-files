@@ -1,0 +1,174 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/oatlocker.sol": "IERCBurn"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Context.sol": {
+			"keccak256": "0xc3233fb992c6f3dee2ad8c339d350b0072cbd76d2d35167ae81273539c85c3b9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://439aab925ec1e3fdadaf515679be924ad7ebd19f4c9ceb5b468b472ba01fb7cc",
+				"dweb:/ipfs/QmVUz93cK4cjWgiLLtwiex275MEZFtSoDwgdhQoprZx8N4"
+			]
+		},
+		"contracts/EnumerableSet.sol": {
+			"keccak256": "0x63f90edecaeb32e293b72c9cb061809718184eded9e4b4354152c0b87377eee2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9ab1ef12e305648067b773e198efc0b5c082a724b3bfeb37b4a79e2464e9f48c",
+				"dweb:/ipfs/QmUu8KH5nc7NtU8yzFMyonExVETn7wwAUuFgaWQkFgpn8y"
+			]
+		},
+		"contracts/Ownable.sol": {
+			"keccak256": "0xaf74fab976d8ba1bc3ac76436213407a0907467090b2f55acec8cf92a1daaf2a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b0c3d415e9d24fa1f3cadaac177081f26964e7f3ab96351c34b185337f54669c",
+				"dweb:/ipfs/QmSpQZdHwFYgMsoJP2KTVGLHeqafnnyQy2nuXGUy9TnNX5"
+			]
+		},
+		"contracts/ReentrancyGuard.sol": {
+			"keccak256": "0x1f7f831fc2318cb39f3315179ae0dcf88c3b934314ac08ed492255a0f07d26f4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2137b5abc22059b86afbc2333bed888d02f89d43bd6c28bc5ce63cd734cf2f31",
+				"dweb:/ipfs/QmaxnBrtYq3uEVJ6geY9NLWQ6wWxnvczcrBDFLz1t4Yw1w"
+			]
+		},
+		"contracts/SafeMath.sol": {
+			"keccak256": "0x77ad19dfd48455e748a8104aaa7348b4782f587a0ea2bb81b9cf08820f696392",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aacf7c37d5ec153c4f01049d0b1d2446fb0a675520713e53f9bb40c20dbe5eb0",
+				"dweb:/ipfs/QmNuv9SYNjQjV5ca4XY3uzRhudcCoo5zhykuNSXigf8hRU"
+			]
+		},
+		"contracts/TransferHelper.sol": {
+			"keccak256": "0xb5712ef30fae33ff0c23d3d2624eb5ddc0831a044f10727c0ff108b01d9981e4",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://4412905c64fadc68cdfe808fc52ded9c953569511fc0eae5a69bd87733fb1e9b",
+				"dweb:/ipfs/QmSDXtRXr2ejAUKYxxVwAGD3bgBgrGefHTGHZbyg8eB7Y1"
+			]
+		},
+		"contracts/oatlocker.sol": {
+			"keccak256": "0x2e04d6fb3ea13b6e205599cb8c2f0bf499fd38ac4a6725a89fa45bb2cd0a99e5",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://a2789859a0ab0ac03d1d21af09188ce38d60d9c4a414066a92ebba57bb15691e",
+				"dweb:/ipfs/QmXkfpheqoXwN5y8PbW4GQzaSjTSemVeAhiiPgepSP8f7F"
+			]
+		}
+	},
+	"version": 1
+}

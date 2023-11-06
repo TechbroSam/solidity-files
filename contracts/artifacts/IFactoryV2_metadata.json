@@ -98,7 +98,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/solidity-files-main/contracts/oatfinally.sol": "IFactoryV2"
+			"contracts/oatfinalprod.sol": "IFactoryV2"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -112,12 +112,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/solidity-files-main/contracts/oatfinally.sol": {
-			"keccak256": "0x84f30308900398fd58891603fc03a41a48d19a0fe10bead39b0162ee9fcb2d72",
+		"contracts/oatfinalprod.sol": {
+			"keccak256": "0x572b14300a0459e5afb2876b16bb581a5979881294b69eb44452a98b663000f1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ed38a19d62a653b7eb6053e42ba83cc915cae780d0e0fcc46ad3b5d67ef9ae68",
-				"dweb:/ipfs/QmaHKzYQVoT8xHtqXCTTLBoUzDEFVGvd1XH8KenZWFdCS3"
+				"bzz-raw://17ec4a5b0b48f3b15ee2a8af2708483a3c1ff0e24ff15a7ebef145ecafde34e4",
+				"dweb:/ipfs/QmS1SqsPp2LA1jKf7KQq2ncpzdnPWrdYCY3K8o1x5wUUuf"
 			]
 		}
 	},
